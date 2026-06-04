@@ -25,9 +25,7 @@
 
             <p>{{ job.description }}</p>
 
-            <button class="btn btn-primary">
-                Apply Now
-            </button>
+            <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">Apply Now</a>
 
         </div>
     </div>
