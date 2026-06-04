@@ -32,7 +32,8 @@ def apply_job(request, job_id):
     if request.method == 'POST':
 
         form = ApplicationForm(
-            request.POST
+            request.POST,
+            request.FILES
         )
 
         if form.is_valid():
