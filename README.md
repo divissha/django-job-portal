@@ -10,7 +10,7 @@ A web-based job portal built using Django.
 - Database integration using SQLite
 - Job applications stored in database
 
-## Technologies Used
+## Tech Stack
 
 - Python
 - Django
