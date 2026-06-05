@@ -7,7 +7,6 @@ class ApplicationForm(forms.ModelForm):
         model = Application
 
         fields = [
-            'applicant_name',
-            'email',
+         
             'resume'
         ]

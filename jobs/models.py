@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Job(models.Model):
     title = models.CharField(max_length=100)
@@ -10,6 +11,13 @@ class Job(models.Model):
 
 
 class Application(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
+
     applicant_name = models.CharField(max_length=100)
     email = models.EmailField()
 

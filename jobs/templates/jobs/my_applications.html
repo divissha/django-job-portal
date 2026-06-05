@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Applications</title>
+</head>
+<body>
+
+<h2>My Applications</h2>
+
+{% for application in applications %}
+
+    <div>
+        <h3>{{ application.job.title }}</h3>
+
+        <p>
+            {{ application.job.company }}
+        </p>
+
+        <hr>
+    </div>
+
+{% empty %}
+
+    <p>No applications yet.</p>
+
+{% endfor %}
+
+</body>
+</html>

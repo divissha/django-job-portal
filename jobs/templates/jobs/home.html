@@ -14,6 +14,34 @@
         Student Job Portal
     </h1>
 
+    {% if user.is_authenticated %}
+
+        <p>
+            Welcome {{ user.username }}
+        </p>
+
+        <a href="{% url 'my_applications' %}"
+        class="btn btn-info mb-3">
+        My Applications</a>
+        
+        <a href="{% url 'logout' %}"
+        class="btn btn-danger mb-3">
+        Logout</a>
+
+        
+
+    {% else %}
+
+        <a href="{% url 'login' %}" class="btn btn-success mb-3">
+            Login
+        </a>
+
+        <a href="{% url 'register' %}" class="btn btn-primary mb-3">
+            Register
+        </a>
+
+    {% endif %}
+
     {% for job in jobs %}
 
     <div class="card mb-3">
@@ -25,7 +53,9 @@
 
             <p>{{ job.description }}</p>
 
-            <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">Apply Now</a>
+            <a href="{% url 'apply_job' job.id %}" class="btn btn-primary">
+                Apply Now
+            </a>
 
         </div>
     </div>
