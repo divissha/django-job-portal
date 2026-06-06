@@ -104,3 +104,14 @@ def register(request):
         'jobs/register.html',
         {'form': form}
     )
+
+def home(request):
+    jobs = Job.objects.all()
+    return render(
+    request,
+    'jobs/home.html',
+    {
+        'jobs': jobs,
+        'job_count': jobs.count()
+    }
+)

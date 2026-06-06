@@ -5,16 +5,33 @@
 </head>
 <body>
 
-<h2>Login</h2>
+<div class="container mt-5" style="max-width:500px;">
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
+    <div class="card shadow">
 
-    <button type="submit">
-        Login
-    </button>
-</form>
+        <div class="card-body">
+
+            <h2 class="text-center mb-4">
+                Login
+            </h2>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button class="btn btn-primary w-100">
+                    Login
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>

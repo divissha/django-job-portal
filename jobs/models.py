@@ -5,6 +5,10 @@ class Job(models.Model):
     title = models.CharField(max_length=100)
     company = models.CharField(max_length=100)
     description = models.TextField()
+    location = models.CharField(
+    max_length=100,
+    default='Remote'
+    )
 
     def __str__(self):
         return self.title
@@ -32,5 +36,21 @@ class Application(models.Model):
         on_delete=models.CASCADE
     )
 
+    STATUS_CHOICES = [
+    ('Pending', 'Pending'),
+    ('Reviewed', 'Reviewed'),
+    ('Rejected', 'Rejected'),
+    ('Accepted', 'Accepted')
+    ]
+    
+    status = models.CharField(
+    max_length=20,
+    choices=STATUS_CHOICES,
+    default='Pending'
+    )
+
     def __str__(self):
         return self.applicant_name
+    
+    
+    
