@@ -24,11 +24,17 @@ urlpatterns = [
     name='login'
     ),
     
+    # path(
+    # 'logout/',
+    # auth_views.LogoutView.as_view(
+    #     next_page='/'
+    # ),
+    # name='logout'
+    # ),
+
     path(
     'logout/',
-    auth_views.LogoutView.as_view(
-        next_page='/'
-    ),
+    views.logout_user,
     name='logout'
     ),
     
